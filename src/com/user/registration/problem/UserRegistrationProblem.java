@@ -35,6 +35,19 @@ public class UserRegistrationProblem {
 		System.out.println("Last name pattern matching :- " + matcher.matches());
 	}
 	
+	/*** UC-3:- As a User need to enter a valid email. ***/
+	public static void emailValidation() {
+		System.out.print("\nEnter E-Mail :- ");
+		String email = input.nextLine();
+		
+		String emailRegex = "^[\\w+-]+(\\.[\\w+-]+)*@[\\w]+(\\.[\\w]+)?(?=(\\.[A-Za-z_]{2,3}$|\\.[a-zA-Z]{2,3}$)).*$";       //email validation using regular expressions.
+	
+		Pattern pattern = Pattern.compile(emailRegex);
+		Matcher matcher = pattern.matcher(email);
+		
+		System.out.println("E-Mail pattern matching :- " + matcher.matches());
+	}
+	
 	/**** Main Method ****/
 	public static void main(String[] args) {
 		/*** Displayed Welcome Message ***/
@@ -43,5 +56,7 @@ public class UserRegistrationProblem {
 		firstNameValidation();
 
 		lastNameValidation();
+		
+		emailValidation();
 	}
 }
