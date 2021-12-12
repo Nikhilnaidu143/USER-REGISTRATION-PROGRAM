@@ -11,6 +11,7 @@ public class UserRegistrationException extends Exception {
 		INVALID_PASSWORD;
 	}
 	
+	
 	public UserRegistrationException(String message) {
 		super(message);
 	}
